@@ -117,8 +117,8 @@ def main():
             continue
         if len(open_list) > 0:
             for neighbour in open_list[lowest].neighbours:
-                gScore = open_list[lowest].g + 1
-                if gScore < neighbour.g:
+                g_score = open_list[lowest].g + 1
+                if g_score < neighbour.g:
                     # find index of neighbour and draw it
                     for i in range(len(grid)):
                         for j in range(len(grid[i])):
@@ -127,8 +127,8 @@ def main():
 
 
                     neighbour.prev = open_list[lowest]
-                    neighbour.g = gScore
-                    neighbour.f = gScore + neighbour.h
+                    neighbour.g = g_score
+                    neighbour.f = g_score + neighbour.h
                     if neighbour not in open_list:
                         open_list.append(neighbour)
         
